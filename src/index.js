@@ -51,7 +51,7 @@ if (sport === null || sport.trim() === '') {
     }
 }
 
-alert(commonAlert)
+alert(commonAlert);
 
 
 
