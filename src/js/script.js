@@ -25,42 +25,44 @@ for (let i = 10; i <= 20; i++) {
 
 alert(squareMessage)
 
+
 let multiplicationSeven = '';
 
-for (let i = 0; i <= 10; i++) {
-    let multiplication = i * 7;
-    if (i < 10) {
-        multiplicationSeven += multiplication + ', ';
-    } else {
-        multiplicationSeven += multiplication;
-    }
+for (let i = 1; i <= 10; i++) {
+    let multiplication = `7 x ${i} = ${7 * i}`;
+    multiplicationSeven += multiplication + '  ';
 }
 
 alert(multiplicationSeven)
 
-let sum = +'';
+let sum = 0;
 for (let i = 1; i <= 15; i++){
     sum += i
 }
 
 alert(sum)
 
-/*let multipling = +'';
+let multipling = 1;
 for (let i = 15; i <= 35; i++){
     multipling *= i
 }
 
-alert(multipling)*/
+alert(multipling)
 
-/*let arithmeticMean = '';
-for (let i = 1; i <= 500; i++){
-    totalSum += i
-    arithmeticMean = totalSum /
+
+let totalSum = 0;
+let count = 500;
+
+for (let i = 1; i <= count; i++) {
+    totalSum += i;
 }
 
-alert(arithmeticMean)*/
+let arithmeticMean = totalSum / count;
 
-let evenSum = +'';
+alert(arithmeticMean)
+
+
+let evenSum = 0;
 
 for (let i = 30; i <= 80; i++){
     if (i % 2 === 0) {
@@ -80,12 +82,35 @@ for (let i = 100; i <= 200; i++){
 
 alert(multipThree)
 
-let naturalNumber = +prompt('Введіть натуральне число:')
+let naturalNumber = +prompt('Введіть натуральне число:');
 
-for (let i = 1; i <= 10; i++){
-    if (i % 10){
-        naturalNumber += i + ' '
+let primeFactor = '';
+let evenFactor = 0;
+let evenFactorSum = 0
+
+for (let i = 1; i <= naturalNumber; i++) {
+    if (naturalNumber % i === 0) {
+        primeFactor += i + ' ';
+        if (i % 2 === 0) {
+            evenFactor++
+            evenFactorSum += i
+        }
+    }
+
+}
+
+alert(primeFactor);
+alert(evenFactor);
+alert(evenFactorSum)
+
+for (let i=1; i<=10; i++) {
+    let j = 1
+    while (j<=10) {
+        document.write(i + ' * ' + j + ' = ' + i*j + '<br>');
+        j++;
     }
 }
 
-alert(naturalNumber)
+
+
+
