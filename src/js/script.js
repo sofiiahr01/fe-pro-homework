@@ -18,7 +18,7 @@ function padString(str, stringLenght, symbol, addLeft = false){
     }
     const addSymbol = stringLenght - str.length;
     const add = symbol.repeat(addSymbol);
-    if (addSymbol) {
+    if (addLeft) {
         return add + str;
     } else {
         return str + add;
