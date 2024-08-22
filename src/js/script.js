@@ -13,10 +13,10 @@ function padString(str, stringLenght, symbol, addLeft = false){
     if (typeof addLeft !== 'boolean'){
         return 'boolean error'
     }
-    if (str.length >= length) {
+    if (str.length >= stringLenght) {
         return str.substr(0, length);
     }
-    const addSymbol = length - str.length;
+    const addSymbol = stringLenght - str.length;
     const add = symbol.repeat(addSymbol);
     if (addSymbol) {
         return add + str;
@@ -26,8 +26,5 @@ function padString(str, stringLenght, symbol, addLeft = false){
 
 }
 
-
-
-
-
-console.log(padString())
+console.log(padString('hello', 8, '*'));
+console.log(padString('hello', 6, '*', false));
