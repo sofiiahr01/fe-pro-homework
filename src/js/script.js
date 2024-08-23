@@ -11,7 +11,7 @@ function padString(str, stringLenght, symbol  = ' ', addLeft = true){
         return 'symbol error'
     }
     if (typeof addLeft !== 'boolean'){
-        return 'boolean error'
+        return 'addLeft error'
     }
     if (str.length >= stringLenght) {
         return str.substring(0, stringLenght);
