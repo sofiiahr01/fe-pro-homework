@@ -1,6 +1,6 @@
 'use strict';
 
-function padString(str, stringLenght, symbol  = ' ', addLeft = false){
+function padString(str, stringLenght, symbol  = ' ', addLeft = true){
     if (typeof str !== 'string' ){
         return 'string error'
     }
@@ -22,9 +22,9 @@ function padString(str, stringLenght, symbol  = ' ', addLeft = false){
         add += symbol
     }
     if (addLeft) {
-        return add + str;
-    } else {
         return str + add;
+    } else {
+        return add + str;
     }
 
 }
