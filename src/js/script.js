@@ -1,6 +1,6 @@
 'use strict';
 
-function padString(str, stringLenght, symbol  = ' ', addLeft = true){
+function padString(str, stringLenght, symbol  = ' ', addRight = true){
     if (typeof str !== 'string' ){
         return 'string error'
     }
@@ -10,7 +10,7 @@ function padString(str, stringLenght, symbol  = ' ', addLeft = true){
     if (typeof symbol !== 'string' || symbol.length !== 1){
         return 'symbol error'
     }
-    if (typeof addLeft !== 'boolean'){
+    if (typeof addRight !== 'boolean'){
         return 'addLeft error'
     }
     if (str.length >= stringLenght) {
@@ -21,7 +21,7 @@ function padString(str, stringLenght, symbol  = ' ', addLeft = true){
     for (let i = 0; i < addSymbol; i++){
         add += symbol
     }
-    if (addLeft) {
+    if (addRight) {
         return str + add;
     } else {
         return add + str;
