@@ -1,6 +1,6 @@
 'use strict';
 
-function padString(str, stringLenght, symbol, addLeft = false){
+function padString(str, stringLenght, symbol  = ' ', addLeft = false){
     if (typeof str !== 'string' ){
         return 'string error'
     }
@@ -14,10 +14,13 @@ function padString(str, stringLenght, symbol, addLeft = false){
         return 'boolean error'
     }
     if (str.length >= stringLenght) {
-        return str.substr(0, length);
+        return str.substring(0, stringLenght);
     }
     const addSymbol = stringLenght - str.length;
-    const add = symbol.repeat(addSymbol);
+    let add = ''
+    for (let i = 0; i < addSymbol; i++){
+        add += symbol
+    }
     if (addLeft) {
         return add + str;
     } else {
@@ -28,3 +31,5 @@ function padString(str, stringLenght, symbol, addLeft = false){
 
 console.log(padString('hello', 8, '*'));
 console.log(padString('hello', 6, '*', false));
+console.log(padString('hello', 2));
+console.log(padString('hello', 7, '*', true))
