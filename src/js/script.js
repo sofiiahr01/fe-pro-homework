@@ -1,5 +1,13 @@
 'use strict';
 
-const userName = prompt('Enter user name')
+function exponentiation(num, power){
+    const result = Math.pow(num, power)
+    alert(result)
+}
 
-alert(`Hello ${userName}! How are you?`);
+function mainFunction(callback){
+    let num = +prompt('Введіть число:')
+    let power = +prompt('Введіть ступінь:')
+    callback(num, power)
+}
+mainFunction(exponentiation)
