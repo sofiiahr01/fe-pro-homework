@@ -71,8 +71,20 @@ function createArr() {
 }
 
 let userArr = createArr();
-console.log(userArr);
+console.log(userArr)
 
 
 //4
+function removeChars(str, charsToRemove) {
+    let taskResult = '';
+    for (let i = 0; i < str.length; i++) {
+        if (!charsToRemove.includes(str[i])) {
+            taskResult += str[i];
+        }
+    }
+    return taskResult;
+}
+
+const taskResult = removeChars("hello world", ['l', 'd']);
+console.log(taskResult)
 
