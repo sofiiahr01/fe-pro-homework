@@ -20,5 +20,17 @@ console.log(indexMaxNum)*/
 const negative = arr.filter(number => number < 0)
 console.log(`Кількість негативних елементів в масиві - ${negative.length}.`);
 
-const uneven = arr.filter(number => number % 2 === 1 )
-console.log(`Кількість позитивних непарних елементів в масиві - ${uneven.length}.`);
+const unevenPositive = arr.filter(positive => positive % 2 === 1)
+console.log(`Кількість позитивних непарних елементів в масиві - ${unevenPositive.length}.`);
+
+/*const evenPositive = arr.filter(positive => positive % 2 === 0)
+console.log(`Кількість позитивних парних елементів в масиві - ${evenPositive.length}.`);
+
+const positiveEvenSum = positive.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(`Сума позитивних елементів дорівнює ${positiveEvenSum}.`);*/
+
+const positiveUnevenSum = unevenPositive.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(`Сума позитивних елементів дорівнює ${positiveUnevenSum}.`);
+
+const positiveMultipl = positive.reduce((accumulator, currentValue) => accumulator * currentValue);
+console.log(`Добуток позитивних елементів дорівнює ${positiveMultipl}.`);
