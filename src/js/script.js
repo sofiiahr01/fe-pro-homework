@@ -67,4 +67,4 @@ const biggerBills = users
 console.log(`Телефонні номери користувачів, у яких баланс більше 2000 доларів: ${biggerBills}.`)
 
 const billsSum = users.reduce((sum, user) => sum + numBills(user.balance), 0)
-console.log(`Сума всіх балансів користувачів дорівеює ${billsSum.toFixed(2)}.`)
+console.log(`Сума всіх балансів користувачів дорівнює ${billsSum.toFixed(2)}.`)
