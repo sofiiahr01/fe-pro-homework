@@ -57,7 +57,7 @@ let users = [
     }
 ]
 
-const numBills = function (balance){
+const numBills = (balance) => {
     return parseFloat(balance.replace(/[$,]/g, ''));
 }
 
