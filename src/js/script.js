@@ -1,5 +1,15 @@
 'use strict';
 
-const userName = prompt('Enter user name')
+const userName = {
+    name: 'Yana'
+}
 
-alert(`Hello ${userName}! How are you?`);
+const greeting = function () {
+    console.log('Welcome, ' + this.name)
+}
+
+let userGreeting = greeting.bind(userName)
+userGreeting()
+
+
+
