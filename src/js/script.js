@@ -28,7 +28,7 @@ const bind = (func= null, context = undefined, args = []) => {
 
 const bindedGetFullName = bind(getFullName, userName);
 console.log(bindedGetFullName)
-console.log(bindedGetFullName());
+console.log(bindedGetFullName())
 
 
 
