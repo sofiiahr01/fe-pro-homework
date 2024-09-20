@@ -1,21 +1,34 @@
 'use strict';
 
-const bindFunc = function(func, context, ...linkedArgs) {
-    return function(...args) {
-        return func.bind(context)(...linkedArgs, ...args);
-    };
-}
-
 const userName = {
-    name: 'Yana'
+    firstName: 'Yana',
+    lastName: 'Repjah'
 }
 
-const greet = function(greeting) {
-    return `${greeting}, ${this.name}`;
+const getFullName = function () {
+    return `${this.firstName} ${this.lastName}`
 }
 
-const boundGreet = bindFunc(greet, userName, 'Welcome');
-console.log(boundGreet())
+const apply = function (func, context, ...args) {
+    let result = null
+    context.func = func;
+    result = context.func(...args);
+    delete context.func;
+
+    return result;
+}
+
+const bind = (func= null, context = undefined, args = []) => {
+    if(!func) return undefined;
+
+    return function() {
+        return apply(func, context, ...args)
+    }
+}
+
+const bindedGetFullName = bind(getFullName, userName);
+console.log(bindedGetFullName)
+console.log(bindedGetFullName());
 
 
 
