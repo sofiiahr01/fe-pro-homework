@@ -1,17 +1,17 @@
 'use strict';
 
-function insertWordInto(str) {
-    const words = str.split(' ')
-    let insertIndex = 0
+const insertWordInto = (str) => {
+    const words = str.split(' ');
+    let insertIndex = 0;
 
-    return function(word) {
-        const gap = ` ${word} `
+    return (word) => {
+        const gap = ` ${word} `;
         if (insertIndex === 0) {
-            words.unshift(gap.trim())
+            words.unshift(gap.trim());
         } else if (insertIndex === words.length) {
-            words.push(gap.trim())
+            words.push(gap.trim());
         } else {
-            words[insertIndex - 1] += gap
+            words[insertIndex - 1] += gap;
         }
 
         insertIndex++;
@@ -22,12 +22,13 @@ function insertWordInto(str) {
 
         return words.join(' ').trim();
     };
-}
+};
 
 const paste = insertWordInto('hello world');
 console.log(paste('Odesa'));
 console.log(paste('Odesa'));
 console.log(paste('Odesa'));
 console.log(paste('Odesa'))
+
 
 
