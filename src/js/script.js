@@ -1,5 +1,15 @@
 'use strict';
 
-const userName = prompt('Enter user name')
+const sum = () => {
+    let totalSum = 0;
+    return (numbers) => {
+        totalSum += numbers;
+        return totalSum;
+    };
+};
 
-alert(`Hello ${userName}! How are you?`);
+const result = sum();
+
+console.log(result(3))
+console.log(result(5))
+console.log(result(20))
