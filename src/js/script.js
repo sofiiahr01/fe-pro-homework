@@ -6,7 +6,7 @@ const randomImg = images[randomImgIndex];
 const imgPath = `./images/${randomImg}`;
 const resultImg = document.createElement('img');
 resultImg.src = imgPath;
-document.body.appendChild(resultImg);
+document.body.append(resultImg);
 
 
 
