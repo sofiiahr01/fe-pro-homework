@@ -1,5 +1,12 @@
 'use strict';
 
-const userName = prompt('Enter user name')
+const appendHTMLElement = (parentEl = null, elementToAppend = null) => {
+    if (!parentEl || !elementToAppend) return
+    parentEl.append(elementToAppend)
 
-alert(`Hello ${userName}! How are you?`);
+}
+
+const textFeild = document.createElement('input')
+console.log(textFeild)
+
+appendHTMLElement()
