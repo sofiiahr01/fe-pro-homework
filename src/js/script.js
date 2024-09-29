@@ -12,7 +12,7 @@ const generateTable = () =>{
     table.append(tbody);
     for (let i = 0; i <= tableSize; i++){
         const tr = document.createElement('tr');
-        for (let c = 0; i <= tableSize; c++){
+        for (let c = 0; c <= tableSize; c++){
         const td = document.createElement('td');
          td.innerHTML = c +'' ;
          tr.append(td);
