@@ -6,16 +6,18 @@ if (!parentEl || !elementToAppend) return
 }
 
 const generateTable = () =>{
-    const tableSize = 10;
+    const tableSize = 9;
     const table = document.createElement('table');
     const tbody = document.createElement('tbody');
     table.append(tbody);
+    let count = 1;
     for (let i = 0; i <= tableSize; i++){
         const tr = document.createElement('tr');
         for (let c = 0; c <= tableSize; c++){
         const td = document.createElement('td');
-         td.innerHTML = c +'' ;
+         ttd.textContent  = count;
          tr.append(td);
+        count++;
         }
          tbody.append(tr);
     }
