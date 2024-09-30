@@ -1,13 +1,5 @@
 'use strict';
 
-const appendHTMLElement = (parentEl = null, elementToAppend = null) => {
-    if (!parentEl || !elementToAppend) return
-    parentEl.append(elementToAppend)
-
-}
-
-
-
     const showHideDiv = () => {
         const textFeild = document.createElement('input')
         textFeild.type = 'text';
@@ -19,13 +11,13 @@ const appendHTMLElement = (parentEl = null, elementToAppend = null) => {
         document.body.append(div);
 
         textFeild.addEventListener('mouseover', () => {
-            div.style.display = 'block';
+            return div.style.display = 'block';
         });
         textFeild.addEventListener('mouseout', () => {
-            div.style.display = 'none';
+            return div.style.display = 'none';
         });
+
     }
 
 showHideDiv()
-appendHTMLElement(document.body, )
 
