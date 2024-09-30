@@ -11,10 +11,10 @@
         document.body.append(div);
 
         textFeild.addEventListener('mouseover', () => {
-            return div.style.display = 'block';
+            div.style.display = 'block';
         });
         textFeild.addEventListener('mouseout', () => {
-            return div.style.display = 'none';
+            div.style.display = 'none';
         });
 
     }
