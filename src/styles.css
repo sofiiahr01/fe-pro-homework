@@ -1,6 +1,19 @@
-div {
-   display : none;
+
+.hidden {
+    display: none;
+}
+
+.show {
+    transition: opacity 0.3s ease;
+    opacity: 1;
     border : 1px solid #000;
     padding : 10px;
     margin-top : 10px;
 }
+
+.hidden.show {
+    opacity: 0;
+}
+
+
+
