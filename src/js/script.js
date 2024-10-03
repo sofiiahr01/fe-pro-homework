@@ -36,7 +36,7 @@ const showHideDiv = () => {
     addEventListeners(textField, div);
 };
 
-showHideDiv();
+showHideDiv()
 
 
 
