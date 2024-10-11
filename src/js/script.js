@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function (){
     const LIST_TYPES = {
         UL: 'ul',
         OL: 'ol',
@@ -36,4 +36,5 @@
     const result = generateList([1, 2, 3, [4, 5, 6]], 'ol');
     appendHTMLElement(document.body, result)
 })();
+
 
