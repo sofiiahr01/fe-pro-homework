@@ -15,7 +15,7 @@
             </div>
         `;
 
-        return wrapper;
+        return wrapper
     };
 
     const getFormHandlers = (todoForm) => {
