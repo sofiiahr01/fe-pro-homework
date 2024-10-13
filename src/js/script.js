@@ -1,8 +1,17 @@
 'use strict';
+const storageKey = 'todoItems';
 
 (function () {
     const todoForm = document.querySelector('[data-todo-form]');
     const todoListContainer = document.querySelector('#todoItems');
+
+    const saveData = (data) => {
+        let savedData = JSON.parse(localStorage.getItem(storageKey))
+        if (!savedData) savedData = [];
+        savedData.push(data);
+        localStorage.setItem(storageKey, JSON.stringify(savedData));
+
+    }
 
     const createTodoElement = ({ title, description }) => {
         const wrapper = document.createElement('div');
@@ -41,10 +50,14 @@
                 return acc;
             }, {});
 
-            const todoItemElement = createTodoElement(data);
-            todoListContainer.prepend(todoItemElement);
-            event.target.reset();
+                const todoItemElement = createTodoElement(data);
+                todoListContainer.prepend(todoItemElement);
+                event.target.reset();
+                saveData(data);
+
         };
+
+
 
         const inputHandler = ({target}) => {
             const formSubmitBtn = todoForm.querySelector('button[type=submit]');
@@ -74,6 +87,20 @@
 
     todoForm.addEventListener('input', inputHandler);
     todoForm.addEventListener('submit', handleSubmit);
-
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedData = JSON.parse(localStorage.getItem(storageKey)) || []
+        savedData.forEach((todoItem) => {
+            const todoItemElement = createTodoElement(todoItem)
+            todoListContainer.prepend(todoItemElement)
+        })
+    })
 })();
+
+
+
+
+
+
+
+
 
