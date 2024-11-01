@@ -73,7 +73,7 @@ Student.prototype.summary = function() {
         } else if (averageMark > 9 || attendanceRate > 0.9) {
             return "Нормально, але можна краще";
         } else {
-            return "Редька!";
+            return "Редька!"
         }
     };
 
