@@ -1,5 +1,5 @@
-'use strict';
-
-const userName = prompt('Enter user name')
-
-alert(`Hello ${userName}! How are you?`);
+document.addEventListener('DOMContentLoaded', () => {
+    import('./weather.js').then(({ getWeather, displayWeather }) => {
+        getWeather('Dnipro', displayWeather);
+    });
+});
