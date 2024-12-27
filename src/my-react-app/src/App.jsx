@@ -16,6 +16,11 @@ import './App.css'
 import Gallery from "./Gallery.jsx";
 import TodoList from "./TodoList.jsx";
 import PackingList from "./PackingList.jsx";
+import TeaSet from "./TeaSet.jsx";
+import Toolbar from "./Toolbar"
+import Form from "./Form"
+import Counter from "./Counter"
+import BucketList from "./BucketList.jsx";
 
 export default function App() {
     return (
@@ -36,6 +41,11 @@ export default function App() {
             <Gallery />
             <TodoList />
                 <PackingList />
+            <TeaSet />
+            <Toolbar />
+            <Form />
+            <Counter />
+                <BucketList />
         </div>
     );
 }
