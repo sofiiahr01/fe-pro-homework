@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
