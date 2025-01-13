@@ -19,7 +19,7 @@ const TodoList = () => {
         }
     };
 
-    // Перемикання стану тудушки
+
     const toggleTodo = (id) => {
         setTodos(
             todos.map((todo) =>
