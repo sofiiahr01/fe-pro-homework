@@ -5,12 +5,12 @@ const TodoList = () => {
     const [todos, setTodos] = useState([]);
     const [inputTodo, setInputTodo] = useState('');
 
-    // Обробник зміни інпуту
+
     const handleChange = (e) => {
         setInputTodo(e.target.value);
     };
 
-    // Додавання нової тудушки
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputTodo.trim()) {
