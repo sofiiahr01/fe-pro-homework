@@ -49,7 +49,7 @@ const Basic = () => (
                     <ErrorMessage name="email" component="div" className="error"/>
                     <br/>
                     <label>Phone number: </label>
-                    <Field type="tel" name="phone number"/>
+                    <Field type="tel" name="phone"/>
                     <br/>
                     <ErrorMessage name="phone number" component="div" className="error"/>
                     <br/>
