@@ -1,0 +1,6 @@
+{
+  "tasks": [
+    { "id": 1, "title": "Доробити UI", "status": "нове", "description": "Потрібно закінчити верстку", "priority": "high" },
+    { "id": 2, "title": "Додати API", "status": "в роботі", "description": "Підключити бекенд", "priority": "medium" }
+  ]
+}
