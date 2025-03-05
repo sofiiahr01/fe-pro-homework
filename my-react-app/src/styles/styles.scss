@@ -1,0 +1,150 @@
+/* Основні стилі */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.5;
+  padding-top: 50px; /* Відступ для Navbar */
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #004f96;  /* Темно-синій */
+  padding: 15px 30px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+  color: #ff6f00;
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Стилі картки товару */
+.product-card {
+  background-color: rgb(188, 255, 180);  /* Світло-зелений фон */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  margin: 20px;
+  width: 100%;
+  height: 400px; /* Одинаковий розмір карток */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-card .product-info {
+  flex-grow: 1;
+}
+
+.product-card .product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.product-card .product-price {
+  color: #004f96;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.product-card .product-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.product-card .add-to-cart {
+  margin-top: 20px;
+  background-color: #004f96;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #005bb5;
+}
+
+/* Контейнер карток товарів */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Мережа карток */
+  gap: 20px;
+}
+
+/* Кнопка "Перейти до кошика" в Navbar */
+.navbar .cart-button {
+  background-color: #ff6f00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+}
+
+.navbar .cart-button:hover {
+  background-color: #e35d00;
+}
+
+/* Адаптивний дизайн */
+@media (max-width: 768px) {
+  .product-card {
+    height: 350px; /* Трохи менший розмір карток на мобільних */
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
