@@ -18,7 +18,6 @@ const CheckoutPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Тут можна додати логіку для відправки даних замовлення
         alert("Замовлення оформлено!");
     };
 

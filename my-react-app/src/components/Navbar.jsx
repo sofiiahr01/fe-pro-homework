@@ -9,13 +9,13 @@ const Navbar = () => {
             <Toolbar>
                 <Container maxWidth="lg">
                     <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                        Мій Інтернет-Магазин
+                        Sopping.ua
                     </Typography>
                     <Button color="inherit" component={Link} to="/">
-                        Каталог
+                        Catalog
                     </Button>
                     <Button color="inherit" component={Link} to="/cart">
-                        Кошик
+                        Cart
                     </Button>
                     <Button color="inherit" component={Link} to="/checkout">
                         Оформлення

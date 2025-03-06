@@ -1,4 +1,3 @@
-/* Основні стилі */
 * {
   margin: 0;
   padding: 0;
@@ -6,23 +5,20 @@
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
-  background-color: #f4f4f4;
   color: #333;
   line-height: 1.5;
-  padding-top: 50px; /* Відступ для Navbar */
+  padding-top: 50px;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Контейнер */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Navbar */
 .navbar {
-  background-color: #004f96;  /* Темно-синій */
+  background-color: #004f96;
   padding: 15px 30px;
   color: #fff;
   position: fixed;
@@ -48,9 +44,7 @@ body {
   font-weight: 700;
 }
 
-/* Стилі картки товару */
 .product-card {
-  background-color: rgb(188, 255, 180);  /* Світло-зелений фон */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -58,7 +52,7 @@ body {
   padding: 15px;
   margin: 20px;
   width: 100%;
-  height: 400px; /* Одинаковий розмір карток */
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -113,14 +107,12 @@ body {
   background-color: #005bb5;
 }
 
-/* Контейнер карток товарів */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Мережа карток */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Кнопка "Перейти до кошика" в Navbar */
 .navbar .cart-button {
   background-color: #ff6f00;
   padding: 10px 20px;
@@ -134,10 +126,9 @@ body {
   background-color: #e35d00;
 }
 
-/* Адаптивний дизайн */
 @media (max-width: 768px) {
   .product-card {
-    height: 350px; /* Трохи менший розмір карток на мобільних */
+    height: 350px;
   }
 
   .navbar {
@@ -148,3 +139,19 @@ body {
     font-size: 0.9rem;
   }
 }
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  select, input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+
+}
+

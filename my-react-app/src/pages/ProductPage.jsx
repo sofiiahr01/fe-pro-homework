@@ -23,7 +23,7 @@ const ProductPage = () => {
                 <Typography variant="body1">{product.description}</Typography>
                 <Typography variant="h5">{`$${product.price}`}</Typography>
                 <Button variant="contained" color="primary">
-                    Додати в кошик
+                    Add to cart
                 </Button>
             </Box>
         </Container>

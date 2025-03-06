@@ -27,7 +27,7 @@ const CartPage = () => {
                             <Button onClick={() => handleDecrement(item.id)}>-</Button>
                             <Typography variant="body1">{`$${item.price * item.quantity}`}</Typography>
                             <Button onClick={() => handleRemove(item.id)} variant="contained" color="secondary">
-                                Видалити
+                                Delite
                             </Button>
                         </Box>
                     </ListItem>

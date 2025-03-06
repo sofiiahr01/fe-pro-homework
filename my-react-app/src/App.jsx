@@ -6,6 +6,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import SuccessPage from "./pages/SuccessPage";
 import { Container } from "@mui/material";
 import Navbar from "./components/Navbar";
+import { store } from "./store/index";
 import './styles/styles.scss';
 
 
