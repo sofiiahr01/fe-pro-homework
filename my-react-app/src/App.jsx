@@ -8,12 +8,13 @@ import { Container } from "@mui/material";
 import Navbar from "./components/Navbar";
 import { store } from "./store/index";
 import './styles/styles.scss';
+import './fonts/fonts.css'
 
 
 function App() {
     return (
         <Router>
-            <Navbar /> {/* Навігаційна панель */}
+            <Navbar />
             <Container maxWidth="lg" sx={{ paddingTop: 4 }}>
                 <Routes>
                     <Route path="/" element={<CatalogPage />} />

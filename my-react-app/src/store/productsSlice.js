@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Отримуємо список категорій
 export const fetchCategories = createAsyncThunk(
     "products/fetchCategories",
     async () => {
@@ -9,7 +8,6 @@ export const fetchCategories = createAsyncThunk(
     }
 );
 
-// Отримуємо список товарів
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async () => {

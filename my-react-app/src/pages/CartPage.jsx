@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { removeFromCart, incrementQuantity, decrementQuantity } from "../store/cartSlice";
 import { Button, Typography, List, ListItem, Box } from "@mui/material";
-
+import '../styles/styles.scss';
+import '../fonts/fonts.css'
 
 const CartPage = () => {
     const cart = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
+    const navigate = useNavigate(); // Хук для перехода на страницу
 
     const handleRemove = (id) => dispatch(removeFromCart(id));
     const handleIncrement = (id) => dispatch(incrementQuantity(id));
@@ -16,7 +19,7 @@ const CartPage = () => {
 
     return (
         <div>
-            <h1>Кошик</h1>
+            <h1>Cart</h1>
             <List>
                 {cart.map((item) => (
                     <ListItem key={item.id}>
@@ -25,17 +28,22 @@ const CartPage = () => {
                             <Button onClick={() => handleIncrement(item.id)}>+</Button>
                             <Typography>{item.quantity}</Typography>
                             <Button onClick={() => handleDecrement(item.id)}>-</Button>
-                            <Typography variant="body1">{`$${item.price * item.quantity}`}</Typography>
+                            <Typography variant="body1">{`${item.price * item.quantity} $`}</Typography>
                             <Button onClick={() => handleRemove(item.id)} variant="contained" color="secondary">
-                                Delite
+                                Delete
                             </Button>
                         </Box>
                     </ListItem>
                 ))}
             </List>
-            <Typography variant="h5">{`Загальна вартість: $${total}`}</Typography>
-            <Button variant="contained" color="primary">
-                Оформити замовлення
+            <Typography variant="h5">{`Total: ${total} $`}</Typography>
+
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => navigate("/checkout")}
+            >
+                To order
             </Button>
         </div>
     );

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts, fetchCategories } from "../store/productsSlice";
 import ProductCard from "../components/ProductCard";
-import "../styles/catalog.scss";
+import '../styles/styles.scss';
+import '../fonts/fonts.css'
 
 const Catalog = () => {
     const dispatch = useDispatch();
@@ -13,14 +14,13 @@ const Catalog = () => {
     const [maxPrice, setMaxPrice] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 8; // Кількість товарів на сторінці
+    const productsPerPage = 8;
 
     useEffect(() => {
         dispatch(fetchProducts());
-        dispatch(fetchCategories()); // Отримуємо список категорій
+        dispatch(fetchCategories());
     }, [dispatch]);
 
-    // Фільтруємо товари за категорією, ціною та пошуком
     const filteredProducts = products
         .filter((product) => (selectedCategory ? product.category === selectedCategory : true))
         .filter((product) => (minPrice ? product.price >= parseFloat(minPrice) : true))
@@ -29,7 +29,6 @@ const Catalog = () => {
             searchQuery ? product.title.toLowerCase().includes(searchQuery.toLowerCase()) : true
         );
 
-    // Пагінація - розрахунок товарів на поточній сторінці
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -39,7 +38,6 @@ const Catalog = () => {
             <h1>Catalog</h1>
 
             <div className="filters">
-                {/* Випадаючий список категорій */}
                 <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
                     <option value="">Categories</option>
                     {categories.length > 0 ? (
@@ -78,7 +76,7 @@ const Catalog = () => {
                 {currentProducts.length > 0 ? (
                     currentProducts.map((product) => <ProductCard key={product.id} product={product} />)
                 ) : (
-                    <p>Товари не знайдено</p>
+                    <p>No items</p>
                 )}
             </div>
             <div className="pagination">
@@ -86,7 +84,7 @@ const Catalog = () => {
                     Back
                 </button>
                 <span>
-                    Page {currentPage} з {Math.ceil(filteredProducts.length / productsPerPage)}
+                    Page {currentPage} from {Math.ceil(filteredProducts.length / productsPerPage)}
                 </span>
                 <button
                     disabled={indexOfLastProduct >= filteredProducts.length}

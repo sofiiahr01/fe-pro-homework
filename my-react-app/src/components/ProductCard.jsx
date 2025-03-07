@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
+import '../styles/styles.scss';
+import '../fonts/fonts.css'
 
 
 const ProductCard = ({ product }) => {
