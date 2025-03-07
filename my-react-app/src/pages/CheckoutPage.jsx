@@ -30,19 +30,19 @@ const CheckoutPage = () => {
     };
 
     return (
-        <div>
+        <div className="checkout-cont">
             <h1>Оформлення замовлення</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="form-wrap" onSubmit={handleSubmit}>
                 <div>
-                    <label>Ім'я</label>
+                    <label>First name</label>
                     <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Прізвище</label>
+                    <label>Last name</label>
                     <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Телефон</label>
+                    <label>Phone</label>
                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
                 </div>
                 <div>
@@ -50,25 +50,25 @@ const CheckoutPage = () => {
                     <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Адреса доставки</label>
+                    <label>Delivery address</label>
                     <input type="text" name="address" value={formData.address} onChange={handleChange} required />
                 </div>
 
                 <div>
-                    <label>Спосіб доставки</label>
+                    <label>Delivery method</label>
                     <select name="deliveryMethod" value={formData.deliveryMethod} onChange={handleChange}>
-                        <option value="courier">Кур'єр</option>
-                        <option value="pickup">Самовивіз</option>
-                        <option value="post">Нова Пошта</option>
+                        <option value="courier">Courier</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="post">Nova Poshta</option>
                     </select>
                 </div>
 
                 <div>
-                    <label>Спосіб оплати</label>
+                    <label>Payment method</label>
                     <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange}>
-                        <option value="card">Оплата карткою</option>
-                        <option value="cash">Готівкою</option>
-                        <option value="onDelivery">Оплата при отриманні</option>
+                        <option value="card">Card</option>
+                        <option value="cash">Cash</option>
+                        <option value="onDelivery">COD</option>
                     </select>
                 </div>
 

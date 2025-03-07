@@ -18,18 +18,21 @@ const CartPage = () => {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
-        <div>
+        <div className="cart-cont">
             <h1>Cart</h1>
             <List>
                 {cart.map((item) => (
                     <ListItem key={item.id}>
-                        <Box display="flex" alignItems="center">
+                        <Box>
                             <Typography variant="body1">{item.title}</Typography>
-                            <Button onClick={() => handleIncrement(item.id)}>+</Button>
-                            <Typography>{item.quantity}</Typography>
-                            <Button onClick={() => handleDecrement(item.id)}>-</Button>
-                            <Typography variant="body1">{`${item.price * item.quantity} $`}</Typography>
-                            <Button onClick={() => handleRemove(item.id)} variant="contained" color="secondary">
+                            <Box>
+                                <Button onClick={() => handleDecrement(item.id)}>-</Button>
+                                <Typography>{item.quantity}</Typography>
+                                <Button onClick={() => handleIncrement(item.id)}>+</Button>
+
+                            </Box>
+                            <Typography className="sum">{`${item.price * item.quantity} $`}</Typography>
+                            <Button className="btn" onClick={() => handleRemove(item.id)} variant="contained">
                                 Delete
                             </Button>
                         </Box>
@@ -39,8 +42,7 @@ const CartPage = () => {
             <Typography variant="h5">{`Total: ${total} $`}</Typography>
 
             <Button
-                variant="contained"
-                color="primary"
+                className="order-btn"
                 onClick={() => navigate("/checkout")}
             >
                 To order

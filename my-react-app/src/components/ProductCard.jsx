@@ -15,13 +15,14 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-card">
             <img src={product.image} alt={product.title}/>
-            <h3>{product.title}</h3>
-            <p>{product.price} $</p>
+            <div><h3>{product.title}</h3>
+                <p>{product.price} $</p>
 
-            <Link to={`/product/${product.id}`} className="details-link">
-                More
-            </Link>
-            <button onClick={handleAddToCart}>Add to cart</button>
+                <Link to={`/product/${product.id}`} className="details-link">
+                    More
+                </Link></div>
+
+            <button className="pr-btn" onClick={handleAddToCart}>Add to cart</button>
         </div>
     );
 };

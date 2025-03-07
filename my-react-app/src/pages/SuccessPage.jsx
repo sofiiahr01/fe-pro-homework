@@ -5,11 +5,11 @@ import '../fonts/fonts.css'
 
 const SuccessPage = () => {
     return (
-        <Container>
-            <Typography variant="h4" color="primary">
-                Ваше замовлення успішно оформлене!
+        <Container className="success-cont">
+            <Typography variant="h4">
+                Your order has been successfully processed!
             </Typography>
-            <Typography>Дякуємо за покупку!</Typography>
+            <Typography>Thank you for shopping at Shopping.ua!</Typography>
         </Container>
     );
 };

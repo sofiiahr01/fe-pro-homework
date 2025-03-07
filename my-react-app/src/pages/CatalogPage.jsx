@@ -16,9 +16,11 @@ const Catalog = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 8;
 
+
     useEffect(() => {
         dispatch(fetchProducts());
         dispatch(fetchCategories());
+
     }, [dispatch]);
 
     const filteredProducts = products
@@ -84,7 +86,7 @@ const Catalog = () => {
                     Back
                 </button>
                 <span>
-                    Page {currentPage} from {Math.ceil(filteredProducts.length / productsPerPage)}
+                    Page {currentPage} / {Math.ceil(filteredProducts.length / productsPerPage)}
                 </span>
                 <button
                     className="page-btn"
