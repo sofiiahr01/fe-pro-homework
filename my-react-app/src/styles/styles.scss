@@ -24,12 +24,17 @@ img {
 button {
   line-height: 1.2;
   width: 190px;
-  margin: 30px 52px;
   padding: 14px 63px;
   border-radius: 200px;
-  border: solid 1px #000;
+  border: solid 2px #333;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+}
 
+button:hover {
+  background-color: #f8f9fa;
 }
 
 .container {
@@ -76,6 +81,18 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 59px;
+}
+
+.page-btn {
+  border: none;
+  padding: 0;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 @media (max-width: 768px) {

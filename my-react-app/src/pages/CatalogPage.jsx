@@ -80,13 +80,14 @@ const Catalog = () => {
                 )}
             </div>
             <div className="pagination">
-                <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
+                <button className="page-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
                     Back
                 </button>
                 <span>
                     Page {currentPage} from {Math.ceil(filteredProducts.length / productsPerPage)}
                 </span>
                 <button
+                    className="page-btn"
                     disabled={indexOfLastProduct >= filteredProducts.length}
                     onClick={() => setCurrentPage(currentPage + 1)}
                 >
