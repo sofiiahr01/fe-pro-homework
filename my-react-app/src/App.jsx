@@ -6,12 +6,31 @@ import CheckoutPage from "./pages/CheckoutPage";
 import SuccessPage from "./pages/SuccessPage";
 import { Container } from "@mui/material";
 import Navbar from "./components/Navbar";
-import { store } from "./store/index";
+import OrderPage from "./pages/OrderPage";
+import { useEffect } from "react";
 import './styles/styles.scss';
-import './fonts/fonts.css'
+import './fonts/fonts.css';
 
+const STORAGE_KEY = "checkoutFormData";
 
 function App() {
+    useEffect(() => {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                firstName: "",
+                lastName: "",
+                phone: "",
+                email: "",
+                city: "",
+                cityRef: "",
+                department: "",
+                address: "",
+                deliveryMethod: "courier",
+                paymentMethod: "card",
+            }));
+        }
+    }, []);
+
     return (
         <Router>
             <Navbar />
@@ -22,6 +41,7 @@ function App() {
                     <Route path="/cart" element={<CartPage />} />
                     <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/success" element={<SuccessPage />} />
+                    <Route path="/orders" element={<OrderPage />} />
                 </Routes>
             </Container>
         </Router>

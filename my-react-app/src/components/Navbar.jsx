@@ -24,6 +24,9 @@ const Navbar = () => {
                         Cart
                         {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
                     </Button>
+                    <Button component={Link} to="/orders">
+                        My orders
+                    </Button>
                 </Container>
             </Toolbar>
         </AppBar>

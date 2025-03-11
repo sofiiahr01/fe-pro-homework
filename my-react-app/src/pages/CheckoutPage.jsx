@@ -4,6 +4,7 @@ import '../styles/styles.scss';
 import '../fonts/fonts.css';
 
 const API_KEY = import.meta.env.VITE_NP_API_KEY;
+const STORAGE_KEY = "checkoutFormData";
 
 const CheckoutPage = () => {
     const navigate = useNavigate();
@@ -23,7 +24,17 @@ const CheckoutPage = () => {
     const [cities, setCities] = useState([]);
     const [departments, setDepartments] = useState([]);
 
-    // Загружаем города, если выбрана "Nova Poshta"
+    useEffect(() => {
+        const savedData = localStorage.getItem(STORAGE_KEY);
+        if (savedData) {
+            setFormData(JSON.parse(savedData));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    }, [formData]);
+
     useEffect(() => {
         if (formData.deliveryMethod !== "post") return;
 
@@ -43,7 +54,7 @@ const CheckoutPage = () => {
                     setCities(data.data);
                 }
             })
-            .catch((error) => console.error("Ошибка загрузки городов:", error));
+            .catch((error) => console.error("Помилка завантаження міст:", error));
     }, [formData.deliveryMethod]);
 
     useEffect(() => {
@@ -65,7 +76,7 @@ const CheckoutPage = () => {
                     setDepartments(data.data);
                 }
             })
-            .catch((error) => console.error("Ошибка загрузки отделений:", error));
+            .catch((error) => console.error("Помилка завантаження відділень:", error));
     }, [formData.cityRef]);
 
     const handleChange = (e) => {
@@ -73,15 +84,24 @@ const CheckoutPage = () => {
 
         if (name === "city") {
             const selectedCity = cities.find((city) => city.Description === value);
-            setFormData({ ...formData, city: value, cityRef: selectedCity?.Ref || "", department: "" });
+            setFormData((prev) => ({
+                ...prev,
+                city: value,
+                cityRef: selectedCity?.Ref || "",
+                department: "",
+            }));
             setDepartments([]);
         } else {
-            setFormData({ ...formData, [name]: value });
+            setFormData((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.removeItem(STORAGE_KEY); // Очищаємо збережені дані після замовлення
         setTimeout(() => {
             navigate("/success");
         }, 500);
